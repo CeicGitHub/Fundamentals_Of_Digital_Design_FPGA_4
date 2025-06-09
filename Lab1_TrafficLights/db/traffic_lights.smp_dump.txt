@@ -1,6 +1,9 @@
 
 State Machine - |semaforo_inteligente|estado_actual
-Name estado_actual.ROJO estado_actual.VERDE estado_actual.AMARILLO 
-estado_actual.ROJO 0 0 0 
-estado_actual.AMARILLO 1 0 1 
-estado_actual.VERDE 1 1 0 
+Name estado_actual.ROJO estado_actual.AMARILLO_ON_2 estado_actual.AMARILLO_OFF estado_actual.AMARILLO_ON_1 estado_actual.INACTIVO estado_actual.VERDE 
+estado_actual.VERDE 0 0 0 0 0 0 
+estado_actual.INACTIVO 0 0 0 0 1 1 
+estado_actual.AMARILLO_ON_1 0 0 0 1 0 1 
+estado_actual.AMARILLO_OFF 0 0 1 0 0 1 
+estado_actual.AMARILLO_ON_2 0 1 0 0 0 1 
+estado_actual.ROJO 1 0 0 0 0 1 
