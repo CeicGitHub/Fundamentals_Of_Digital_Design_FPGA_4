@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Verilog/Modulo4/Lab1_TrafficLights/simulation/modelsim
+vsemaforo_inteligente
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1750442630
+!i10b 1
+!s100 1903HFT8O9[YGH@A;j1h51
+Ii4mam:;QMjnTzg=Kd06g]1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 semaforo_inteligente_sv_unit
+S1
+R0
+w1750397601
+8D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv
+FD:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv
+L0 5
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1750442630.000000
+!s107 D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Verilog/Modulo4/Lab1_TrafficLights|D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+D:/Verilog/Modulo4/Lab1_TrafficLights
+Z8 tCvgOpt 0
+vtb_semaforo_inteligente
+R1
+R2
+!i10b 1
+!s100 zGk>SHX1MLZGKT5Y;i01W2
+I8kNo0SG0`gB@Mg4QiH?]d3
+R3
+!s105 tb_semaforo_inteligente_sv_unit
+S1
+R0
+w1750397068
+8D:/Verilog/Modulo4/Lab1_TrafficLights/tb_semaforo_inteligente.sv
+FD:/Verilog/Modulo4/Lab1_TrafficLights/tb_semaforo_inteligente.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Verilog/Modulo4/Lab1_TrafficLights/tb_semaforo_inteligente.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Verilog/Modulo4/Lab1_TrafficLights|D:/Verilog/Modulo4/Lab1_TrafficLights/tb_semaforo_inteligente.sv|
+!i113 1
+R6
+R7
+R8

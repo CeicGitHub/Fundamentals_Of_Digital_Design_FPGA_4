@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Jun 19 21:11:23 2025
+Fitter Status : Successful - Thu Jun 19 22:33:58 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : traffic_lights
 Top-level Entity Name : semaforo_inteligente
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 76 / 114,480 ( < 1 % )
-    Total combinational functions : 75 / 114,480 ( < 1 % )
+Total logic elements : 65 / 114,480 ( < 1 % )
+    Total combinational functions : 64 / 114,480 ( < 1 % )
     Dedicated logic registers : 37 / 114,480 ( < 1 % )
 Total registers : 37
 Total pins : 10 / 529 ( 2 % )

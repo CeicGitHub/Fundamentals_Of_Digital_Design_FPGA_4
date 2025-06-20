@@ -1,5 +1,5 @@
 Flow report for traffic_lights
-Thu Jun 19 21:11:33 2025
+Thu Jun 19 22:34:08 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 19 21:11:33 2025       ;
+; Flow Status                        ; Successful - Thu Jun 19 22:34:08 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; traffic_lights                              ;
 ; Top-level Entity Name              ; semaforo_inteligente                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 76 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 75 / 114,480 ( < 1 % )                      ;
+; Total logic elements               ; 65 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 64 / 114,480 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 37 / 114,480 ( < 1 % )                      ;
 ; Total registers                    ; 37                                          ;
 ; Total pins                         ; 10 / 529 ( 2 % )                            ;
@@ -64,30 +64,38 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/19/2025 21:10:54 ;
+; Start date & time ; 06/19/2025 22:33:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; traffic_lights      ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                      ;
-+-------------------------------------+----------------------------------------+----------------+----------------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name          ; Section Id     ;
-+-------------------------------------+----------------------------------------+----------------+----------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273184157047325.175039265305224        ; --             ; --                   ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --             ; --                   ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>         ; --                   ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --             ; --                   ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --             ; --                   ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --             ; --                   ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --             ; --                   ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --             ; --                   ; --             ;
-; TOP_LEVEL_ENTITY                    ; semaforo_inteligente                   ; traffic_lights ; --                   ; --             ;
-+-------------------------------------+----------------------------------------+----------------+----------------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                ;
++--------------------------------------+----------------------------------------+----------------+----------------------+-------------------------+
+; Assignment Name                      ; Value                                  ; Default Value  ; Entity Name          ; Section Id              ;
++--------------------------------------+----------------------------------------+----------------+----------------------+-------------------------+
+; COMPILER_SIGNATURE_ID                ; 273184157047325.175039761207164        ; --             ; --                   ; --                      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --             ; --                   ; tb_semaforo_inteligente ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_semaforo_inteligente                ; --             ; --                   ; eda_simulation          ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --             ; --                   ; eda_simulation          ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>         ; --                   ; --                      ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --             ; --                   ; eda_simulation          ;
+; EDA_TEST_BENCH_FILE                  ; tb_semaforo_inteligente.sv             ; --             ; --                   ; tb_semaforo_inteligente ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_semaforo_inteligente                ; --             ; --                   ; tb_semaforo_inteligente ;
+; EDA_TEST_BENCH_NAME                  ; tb_semaforo_inteligente                ; --             ; --                   ; eda_simulation          ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --             ; --                   ; eda_simulation          ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --             ; --                   ; --                      ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --             ; --                   ; --                      ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --             ; --                   ; --                      ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top                     ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top                     ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --             ; semaforo_inteligente ; Top                     ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --             ; --                   ; --                      ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --             ; --                   ; --                      ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --             ; --                   ; --                      ;
+; TOP_LEVEL_ENTITY                     ; semaforo_inteligente                   ; traffic_lights ; --                   ; --                      ;
++--------------------------------------+----------------------------------------+----------------+----------------------+-------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -95,12 +103,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4785 MB             ; 00:00:23                           ;
-; Fitter               ; 00:00:18     ; 1.0                     ; 5826 MB             ; 00:00:26                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4679 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4863 MB             ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4785 MB             ; 00:00:23                           ;
+; Fitter               ; 00:00:15     ; 1.0                     ; 5820 MB             ; 00:00:26                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4678 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4860 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:55                           ;
+; Total                ; 00:00:32     ; --                      ; --                  ; 00:00:55                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
