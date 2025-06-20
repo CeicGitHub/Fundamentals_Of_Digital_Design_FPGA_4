@@ -1,16 +1,38 @@
-//todo__comments: El reloj es de 50MHz == 50 millones de flancos de subida por segundo.
-//todo__comments: Un flanco cada 20ns o 1000 flancos por 20 microsegundos --> 50 flancos por microsegundo.
+//** Team9: Lab1_TrafficLights ; Module4
+//** This program corresponds to the main logic of the "stable" version. 
+//** The behavior simulates a state machine for traffic light signals, such that through defined execution times and truth states in transition, each of these elements is represented.
 
 module semaforo_inteligente (
-    input  logic       clk,
-    input  logic       rst,
-    input  logic       start,             // Esta señal es para iniciar el ciclo
-    input  logic       sensor_vehiculo,   // extender el tiempo --> "VERDE"
-    output logic [1:0] luz                // 00: Rojo, 01: Amarillo, 10: Verde
-
+    input  logic       clk,               //!! CLK --> PINY2 (50 MHZ CLOCK)
+    input  logic       rst,               //!! rst --> KEY0
+    input  logic       start,             //!! start --> SW1
+    input  logic       sensor_vehiculo,   //!! sensorvehiculo --> SW0
+    output logic [1:0] luz,               //!! 00: rojo, 01: amarillo, 10: verde && luz[0] --> LEDG0; luz[1] --> LEDG1
+    output logic [2:0] estado_debug,      //!! estado debug[0] --> LEDG5;  estado debug[1] --> LEDG6; estado debug[2] --> LEDG7
+    output logic       clk_lento_debug    //!! clk_lento_debug --> LEDG8
 );
 
-    // Aqui se definen los estados (6 en total)
+    // ---------- Divisor de frecuencia ----------
+    logic [25:0] divisor = 0;
+    logic clk_lento = 0;
+
+    assign clk_lento_debug = clk_lento;
+
+    always_ff @(posedge clk or negedge rst) begin
+        if (~rst) begin
+        divisor <= 0;
+        clk_lento <= 0;
+        end else begin
+            if (divisor == 25_000_000) begin  // 0.5 segundos
+            clk_lento <= ~clk_lento;
+            divisor <= 0;
+            end else begin
+            divisor <= divisor + 1;
+            end
+        end
+    end
+
+    // ---------- Estados ----------
     typedef enum logic [2:0] {
         INACTIVO        = 3'd0,
         VERDE           = 3'd1,
@@ -21,30 +43,34 @@ module semaforo_inteligente (
     } estado_t;
 
     estado_t estado_actual, estado_siguiente;
-
+    logic [3:0] contador;
     int tiempo_limite;
-    
-    logic [3:0] contador; // Hasta 15 ciclos es suficiente
 
-    // ------------------ LÓGICA SECUENCIAL ------------------
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            estado_actual <= VERDE; // Aqui se inicia en "VERDE"
+    assign estado_debug = estado_actual;
+
+    // ---------- FSM SECUENCIAL ----------
+    always_ff @(posedge clk_lento or negedge rst) begin
+        if (~rst) begin
+            estado_actual <= INACTIVO;
             contador <= 0;
-        end else begin
-            if (estado_actual != estado_siguiente) begin
+        end else if (start) begin
+            if (contador == tiempo_limite) begin
                 estado_actual <= estado_siguiente;
-                contador <= 1; // reinicia contador al cambiar de estado
-            end else if (start == 1) begin
+                contador <= 1;
+            end else begin
                 contador <= contador + 1;
             end
+        end else begin
+            // Si start == 0, no se avanza ni cuenta
+            estado_actual <= estado_actual;
+            contador <= contador;
         end
     end
 
-    // ------------------ LÓGICA COMBINACIONAL ------------------
+    // ---------- FSM COMBINACIONAL ----------
     always_comb begin
         estado_siguiente = estado_actual;
-		  tiempo_limite = 10;
+        tiempo_limite = 10;
 
         case (estado_actual)
             INACTIVO: begin
@@ -53,39 +79,32 @@ module semaforo_inteligente (
             end
 
             VERDE: begin
-                if (contador == 10)
+                tiempo_limite = sensor_vehiculo ? 12 : 10;
+                if (contador == tiempo_limite)
                     estado_siguiente = AMARILLO_ON_1;
             end
-
-            //this extra condition for "sensor_vehiculo"
-            VERDE: begin
-                if (sensor_vehiculo)
-                    tiempo_limite = 12;  // 2 ciclos más, por ejemplo
-                else
-                    tiempo_limite = 10;
-
-                 if (contador == tiempo_limite)
-                    estado_siguiente = AMARILLO_ON_1;
-            end
-            //this extra condition for "sensor_vehiculo"
 
             AMARILLO_ON_1: begin
-                if (contador == 2)
+                tiempo_limite = 2;
+                if (contador == tiempo_limite)
                     estado_siguiente = AMARILLO_OFF;
             end
 
             AMARILLO_OFF: begin
-                if (contador == 2)
+                tiempo_limite = 2;
+                if (contador == tiempo_limite)
                     estado_siguiente = AMARILLO_ON_2;
             end
 
             AMARILLO_ON_2: begin
-                if (contador == 2)
+                tiempo_limite = 2;
+                if (contador == tiempo_limite)
                     estado_siguiente = ROJO;
             end
 
             ROJO: begin
-                if (contador == 15)
+                tiempo_limite = 15;
+                if (contador == tiempo_limite)
                     estado_siguiente = INACTIVO;
             end
 
@@ -93,17 +112,18 @@ module semaforo_inteligente (
         endcase
     end
 
-    // ------------------ SALIDA LUZ ------------------
+    // ---------- SALIDA DE LUCES ----------
     always_comb begin
         case (estado_actual)
             VERDE:          luz = 2'b10;
-            AMARILLO_ON_1,               //without condition "yellow" == "luz contador" doens't have duty cycles.
+            AMARILLO_ON_1:  luz = 2'b01;
             AMARILLO_ON_2:  luz = 2'b01;
-            AMARILLO_OFF,
-            ROJO,
+            AMARILLO_OFF:   luz = 2'b00;
+            ROJO:           luz = 2'b11;
             INACTIVO:       luz = 2'b00;
             default:        luz = 2'b00;
         endcase
     end
 
 endmodule
+

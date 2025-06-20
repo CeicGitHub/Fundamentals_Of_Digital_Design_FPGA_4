@@ -1,5 +1,5 @@
 Flow report for traffic_lights
-Mon Jun 09 07:23:20 2025
+Thu Jun 19 21:11:33 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 09 07:23:20 2025       ;
+; Flow Status                        ; Successful - Thu Jun 19 21:11:33 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; traffic_lights                              ;
 ; Top-level Entity Name              ; semaforo_inteligente                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 30 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 30 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 10 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 6 / 529 ( 1 % )                             ;
+; Total logic elements               ; 76 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 75 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 37 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 37                                          ;
+; Total pins                         ; 10 / 529 ( 2 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/09/2025 07:22:34 ;
+; Start date & time ; 06/19/2025 21:10:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; traffic_lights      ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+----------------+----------------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name          ; Section Id     ;
 +-------------------------------------+----------------------------------------+----------------+----------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273184157047325.174947895301540        ; --             ; --                   ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273184157047325.175039265305224        ; --             ; --                   ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --             ; --                   ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>         ; --                   ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --             ; --                   ; eda_simulation ;
@@ -95,12 +95,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4784 MB             ; 00:00:22                           ;
-; Fitter               ; 00:00:22     ; 1.0                     ; 5820 MB             ; 00:00:34                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4677 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4860 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
-; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:04                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4785 MB             ; 00:00:23                           ;
+; Fitter               ; 00:00:18     ; 1.0                     ; 5826 MB             ; 00:00:26                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4679 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4863 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:55                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

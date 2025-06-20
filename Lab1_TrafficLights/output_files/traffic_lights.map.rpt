@@ -1,5 +1,5 @@
 Analysis & Synthesis report for traffic_lights
-Mon Jun 09 07:22:44 2025
+Thu Jun 19 21:11:04 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 09 07:22:44 2025       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 19 21:11:04 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; traffic_lights                              ;
 ; Top-level Entity Name              ; semaforo_inteligente                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 30                                          ;
-;     Total combinational functions  ; 30                                          ;
-;     Dedicated logic registers      ; 10                                          ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 6                                           ;
+; Total logic elements               ; 78                                          ;
+;     Total combinational functions  ; 75                                          ;
+;     Dedicated logic registers      ; 37                                          ;
+; Total registers                    ; 37                                          ;
+; Total pins                         ; 10                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -174,36 +174,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 30      ;
-;                                             ;         ;
-; Total combinational functions               ; 30      ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 16      ;
-;     -- 3 input functions                    ; 7       ;
-;     -- <=2 input functions                  ; 7       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 30      ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 10      ;
-;     -- Dedicated logic registers            ; 10      ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 6       ;
-;                                             ;         ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; WideOr0 ;
-; Maximum fan-out                             ; 11      ;
-; Total fan-out                               ; 145     ;
-; Average fan-out                             ; 2.79    ;
-+---------------------------------------------+---------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 78        ;
+;                                             ;           ;
+; Total combinational functions               ; 75        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 18        ;
+;     -- 3 input functions                    ; 23        ;
+;     -- <=2 input functions                  ; 34        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 50        ;
+;     -- arithmetic mode                      ; 25        ;
+;                                             ;           ;
+; Total registers                             ; 37        ;
+;     -- Dedicated logic registers            ; 37        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 10        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 37        ;
+; Total fan-out                               ; 342       ;
+; Average fan-out                             ; 2.59      ;
++---------------------------------------------+-----------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +211,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+----------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name          ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+----------------------+--------------+
-; |semaforo_inteligente      ; 30 (30)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |semaforo_inteligente ; semaforo_inteligente ; work         ;
+; |semaforo_inteligente      ; 75 (75)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |semaforo_inteligente ; semaforo_inteligente ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -219,16 +219,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |semaforo_inteligente|estado_actual                                                                                                                                      ;
-+-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+------------------------+---------------------+
-; Name                        ; estado_actual.ROJO ; estado_actual.AMARILLO_ON_2 ; estado_actual.AMARILLO_OFF ; estado_actual.AMARILLO_ON_1 ; estado_actual.INACTIVO ; estado_actual.VERDE ;
-+-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+------------------------+---------------------+
-; estado_actual.VERDE         ; 0                  ; 0                           ; 0                          ; 0                           ; 0                      ; 0                   ;
-; estado_actual.INACTIVO      ; 0                  ; 0                           ; 0                          ; 0                           ; 1                      ; 1                   ;
-; estado_actual.AMARILLO_ON_1 ; 0                  ; 0                           ; 0                          ; 1                           ; 0                      ; 1                   ;
-; estado_actual.AMARILLO_OFF  ; 0                  ; 0                           ; 1                          ; 0                           ; 0                      ; 1                   ;
-; estado_actual.AMARILLO_ON_2 ; 0                  ; 1                           ; 0                          ; 0                           ; 0                      ; 1                   ;
-; estado_actual.ROJO          ; 1                  ; 0                           ; 0                          ; 0                           ; 0                      ; 1                   ;
-+-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+------------------------+---------------------+
++-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+---------------------+------------------------+
+; Name                        ; estado_actual.ROJO ; estado_actual.AMARILLO_ON_2 ; estado_actual.AMARILLO_OFF ; estado_actual.AMARILLO_ON_1 ; estado_actual.VERDE ; estado_actual.INACTIVO ;
++-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+---------------------+------------------------+
+; estado_actual.INACTIVO      ; 0                  ; 0                           ; 0                          ; 0                           ; 0                   ; 0                      ;
+; estado_actual.VERDE         ; 0                  ; 0                           ; 0                          ; 0                           ; 1                   ; 1                      ;
+; estado_actual.AMARILLO_ON_1 ; 0                  ; 0                           ; 0                          ; 1                           ; 0                   ; 1                      ;
+; estado_actual.AMARILLO_OFF  ; 0                  ; 0                           ; 1                          ; 0                           ; 0                   ; 1                      ;
+; estado_actual.AMARILLO_ON_2 ; 0                  ; 1                           ; 0                          ; 0                           ; 0                   ; 1                      ;
+; estado_actual.ROJO          ; 1                  ; 0                           ; 0                          ; 0                           ; 0                   ; 1                      ;
++-----------------------------+--------------------+-----------------------------+----------------------------+-----------------------------+---------------------+------------------------+
 
 
 +------------------------------------------------------------+
@@ -236,9 +236,9 @@ Encoding Type:  One-Hot
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
-; estado_actual~4                       ; Lost fanout        ;
 ; estado_actual~5                       ; Lost fanout        ;
 ; estado_actual~6                       ; Lost fanout        ;
+; estado_actual~7                       ; Lost fanout        ;
 ; Total Number of Removed Registers = 3 ;                    ;
 +---------------------------------------+--------------------+
 
@@ -248,24 +248,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 37    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 2     ;
-; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 37    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 9     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |semaforo_inteligente|contador[3] ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |semaforo_inteligente|Selector1   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |semaforo_inteligente|estado_actual ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -273,20 +272,21 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
-; cycloneiii_ff         ; 10                          ;
-;     CLR               ; 4                           ;
-;     CLR SLD           ; 2                           ;
-;     ENA CLR           ; 4                           ;
-; cycloneiii_lcell_comb ; 32                          ;
-;     normal            ; 32                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 16                          ;
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 37                          ;
+;     CLR               ; 28                          ;
+;     ENA CLR           ; 9                           ;
+; cycloneiii_lcell_comb ; 79                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 54                          ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 4.82                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 3.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -305,29 +305,29 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jun 09 07:22:33 2025
+    Info: Processing started: Thu Jun 19 21:10:53 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off traffic_lights -c traffic_lights
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file semaforo_inteligente.sv
-    Info (12023): Found entity 1: semaforo_inteligente File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 4
+    Info (12023): Found entity 1: semaforo_inteligente File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file semaforo_inteligente_2.sv
+    Info (12023): Found entity 1: semaforo_inteligente_2 File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente_2.sv Line: 5
 Info (12127): Elaborating entity "semaforo_inteligente" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at semaforo_inteligente.sv(39): truncated value with size 32 to match size of target (4) File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 39
-Warning (10272): Verilog HDL Case Statement warning at semaforo_inteligente.sv(61): case item expression covers a value already covered by a previous case item File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at semaforo_inteligente.sv(30): truncated value with size 32 to match size of target (26) File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at semaforo_inteligente.sv(61): truncated value with size 32 to match size of target (4) File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 61
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sensor_vehiculo" File: D:/Verilog/Modulo4/Lab1_TrafficLights/semaforo_inteligente.sv Line: 8
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 30 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4784 megabytes
-    Info: Processing ended: Mon Jun 09 07:22:44 2025
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 78 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4785 megabytes
+    Info: Processing ended: Thu Jun 19 21:11:04 2025
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
 
 
